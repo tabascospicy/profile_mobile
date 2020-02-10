@@ -11,7 +11,9 @@ function BuscadorContent() {
     { name: "laptop hp", precio: 500, categoria: ["electronica", "laptops"] },
     { name: "laptop asus", precio: 500, categoria: ["electronica", "laptops"] }
   ]);
+  // este es un template para registrar los tipos de filtros disponibles este se manda al componente buscador por props
   const [filtro, setFiltro] = useState({        //tipos de busqueda 
+    //cada filtro posee sus propias variables y una respectiva funcion de validacion que devuelve true si cumple con la considicion
     categoria : {
       name: "categoria",
       categoria: "",
@@ -32,7 +34,6 @@ function BuscadorContent() {
       min:0,
       max:0,
       validar: function( {min, max},{precio}) {
-
         let encaja = (min <= precio && precio <= max) ? true :false; 
         console.log(precio,min,max,encaja)
         return encaja ;
@@ -40,6 +41,8 @@ function BuscadorContent() {
     },
   }
   );
+  //este es el array que contiene los filtros en total que se estaran utilizando 
+  //al activarse un filtro este se va a pushear a este array
   const [filtros,setFiltros] = useState([])
   return (
     <div className="content flex-center-column">

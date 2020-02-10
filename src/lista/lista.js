@@ -8,9 +8,12 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from '@material-ui/core/Paper';
 function Lista({ datos, filtro }) {
   const [mostrar, setMostrar] = useState([{}]);
+  //no se porque puse esto aqui en el momento tenia sentido
+//activa la funcion al detectar que la prop filtro ha sido actualizada
   useEffect(() => {
     setMostrar([{}]);
     let filtrados = datos;
+    //funcion para activar la condicion que viene con el objeto filtro
     function evaluar(condi) {
       const holi = element => {
         console.log(condi, element);
@@ -18,13 +21,14 @@ function Lista({ datos, filtro }) {
       };
       return holi;
     }
-
-    let condicion = Object.keys(filtro);
+    //let condicion = Object.keys(filtro);
+    //si hay un filtro disponible se va a mapear el array filtro para aplicarlos en la lista de objetos
     if (filtro) {
       filtro.map((filt, number) => {
         filtrados = filtrados.filter(evaluar(filt));
       });
     }
+    //por ultimo el resultado final se agrega a la varible de estado mostrar para que se imprima en pantalla
     setMostrar(filtrados);
   }, [filtro]);
   return (

@@ -8,17 +8,22 @@ function Buscador(props) {
         ]);
         const [min,setMin] = useState(0);
         const [max,setMax] = useState(0);
+         // activaar el filtro por categoria
      const addFiltroCategoria  = (e) => {
         let value = props.filtro;
         value.categoria = e.target.value;
         props.setFiltro([ ...props.filtros||'',value]);
     }
+   //activar el filtro por precio se toman los datos y se envian al metodo recivido en las props
     const addPrecio = (e) =>{
          let value = props.precio;
          value.min = min;
          value.max = max;
          props.setFiltro([ ...props.filtros||'',value]);
     } 
+    //filtro para precios solo si el min es menor a max
+
+    //se activa cuando el minimo cambia
     const addMin =(e)=>{
          setMin(parseInt(e.target.value));
          console.log(min)
@@ -26,6 +31,7 @@ function Buscador(props) {
               addPrecio(e);
          }
     }
+    // se activa cuando el maximo cambia
     const addMax =(e)=>{
      setMax(parseInt(e.target.value));
      console.log("holi")
