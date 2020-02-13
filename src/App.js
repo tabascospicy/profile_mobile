@@ -5,8 +5,8 @@ import './App.scss';
 
 function App() {
   return (
-    <div className="content flex-center" style={{background:"cornflowerblue"}}>
-      <BuscadorContent/>
+    <div className="content flex-center">
+      <BuscadorContent />
    </div>
   );
 }
