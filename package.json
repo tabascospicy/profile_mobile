@@ -1,5 +1,8 @@
 {
   "name": "templates",
+  "main": "index.js",
+  "author":"tabascospicy",
+  "license": "MIT",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
