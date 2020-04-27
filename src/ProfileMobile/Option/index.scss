@@ -1,0 +1,19 @@
+.fade{
+    opacity:1;
+    transition:0.2s all ease;
+}
+.faded{
+    opacity:0!important;
+    height: 0!important;
+}
+.selected{
+    height: 80%!important;
+}
+.option{
+    height:40px;
+    width: 85%;
+    transition:0.2s ;
+    border-radius: 2rem;
+    box-shadow: 0px 1px 15px 0px #0000004f;
+}
+    

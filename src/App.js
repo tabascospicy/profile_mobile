@@ -1,14 +1,22 @@
-import React from 'react';
-//import CustomButton from './button/button'
-import BuscadorContent from "./buscador/content"
-import './App.scss';
+import React,{useState} from "react";
+import "./App.scss";
+import StateProvider from "./context";
+import ProfileMobile from "./ProfileMobile/Content";
 
 function App() {
-  return (
-    <div className="content flex-center">
-      <BuscadorContent />
-   </div>
-  );
+  const [selected,setSelected] = useState(false);
+  const [key,setKey] = useState(0);
+   const toggleSelected =(value) =>{
+    setSelected(value)
+   }
+   const toggleKey =(value) =>{
+     setKey(value);
+   }
+    return (
+        <StateProvider.Provider value={{selected,key,toggleSelected,toggleKey}}>
+            <ProfileMobile />
+        </StateProvider.Provider>
+    );
 }
 
 export default App;
