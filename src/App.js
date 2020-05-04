@@ -11,6 +11,7 @@ function App() {
    }
    const toggleKey =(value) =>{
      setKey(value);
+     setSelected(value ? true:false);
    }
     return (
         <StateProvider.Provider value={{selected,key,toggleSelected,toggleKey}}>
